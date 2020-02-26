@@ -36,15 +36,14 @@
                                 </thead>
                                 <tbody>
                                     <?php
-                                    $query = $this->db->get('user');
-                                    foreach ($query->result() as $row) { ?>
+                                    foreach ($all_user as $row) { ?>
                                         <tr>
                                             <td><?= $row->id ?></td>
                                             <td><?= $row->nama ?></td>
                                             <td><?= $row->email ?></td>
                                             <td><img style="width: 3em" src="<?= base_url() . 'img/profile/' . $row->image ?>" class=".img-thumbnail elevation-2" alt="User Image"></td>
                                             <td><?= $row->level ?></td>
-                                            <td><a href="<?= base_url() . '/admin/hapus/' . $row->id ?>" class="float-center btn btn-danger" onclick="return confirm('yakin?')">hapus</a></td>
+                                            <td><a href="<?= base_url() . 'admin/hapus_user/' . $row->id ?>" class="float-center btn btn-danger" onclick="return confirm('yakin?')">hapus</a></td>
                                         </tr>
                                     <?php } ?>
                                 </tbody>

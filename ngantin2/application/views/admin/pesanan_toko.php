@@ -32,8 +32,7 @@
                                 </thead>
                                 <tbody>
                                     <?php
-                                    $query = $this->db->select('*')->where('nama_toko !=', '')->get('user');
-                                    foreach ($query->result() as $row) { ?>
+                                    foreach ($pesanan_byid as $row) { ?>
                                         <tr>
                                             <td><?= $row->id ?></td>
                                             <td><?= $row->nama ?></td>

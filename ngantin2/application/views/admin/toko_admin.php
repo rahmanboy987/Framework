@@ -32,13 +32,12 @@
                                 </thead>
                                 <tbody>
                                     <?php
-                                    $query = $this->db->select('*')->where('nama_toko !=', '')->get('user');
-                                    foreach ($query->result() as $row) { ?>
+                                    foreach ($all_toko as $row) { ?>
                                         <tr>
                                             <td><?= $row->id ?></td>
                                             <td><?= $row->nama ?></td>
                                             <td><?= $row->nama_toko ?></td>
-                                            <td><a href="<?= base_url() . '/admin/hapus_toko/' . $row->id ?>" class="float-center btn btn-danger" onclick="return confirm('yakin?')">hapus</a></td>
+                                            <td><a href="<?= base_url() . 'admin/hapus_toko/' . $row->id ?>" class="float-center btn btn-danger" onclick="return confirm('yakin?')">hapus</a></td>
                                         </tr>
                                     <?php } ?>
                                 </tbody>

@@ -52,41 +52,41 @@
                         <div class="card-body">
                             <div class="tab-content">
                                 <div class="active tab-pane" id="settings">
-                                    <form class="form-horizontal" method="post">
+                                    <form class="form-horizontal" method="post" action="<?= base_url() ?>admin/edit_profile">
                                         <div class="form-group row">
                                             <label for="inputName" class="col-sm-2 col-form-label">Name</label>
                                             <div class="col-sm-10">
-                                                <input type="email" name="email" class="form-control" id="inputName" value="<?= $user['nama'] ?>">
+                                                <input type="name" name="nama" class="form-control" id="inputName" value="<?= $user['nama'] ?>" autocomplete="off">
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
                                             <div class="col-sm-10">
-                                                <input type="email" name="toko" class="form-control" id="inputEmail" value="<?= $user['email'] ?>">
+                                                <input type="email" name="email" class="form-control" id="inputEmail" value="<?= $user['email'] ?>" disabled>
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <label for="inputName2" class="col-sm-2 col-form-label">Toko Name</label>
                                             <div class="col-sm-10">
-                                                <input type="text" name="nama_toko" class="form-control" id="inputName2" value="<?= $user['nama_toko'] ?>">
+                                                <input type="text" name=" nama_toko" class="form-control" id="inputName2" value="<?= $user['nama_toko'] ?>" autocomplete="off">
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <label for="inputExperience" class="col-sm-2 col-form-label">Photo</label>
                                             <div class="col-sm-10">
-                                                <input type="file" name="photo" class="form-control" id="inputExperience" placeholder="Experience"></input>
+                                                <input type="file" name="photo" class="form-control" id="inputExperience" placeholder="Experience" disabled></input>
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <?= form_error('password1', '<small class="text-danger">', '</small>') ?>
                                             <label for="inputExperience" class="col-sm-2 col-form-label">Password</label>
                                             <div class="col-sm-10">
-                                                <input type="password" name="pass" class="form-control" id="inputExperience" placeholder="Masukkan Password Anda"></input>
+                                                <input type="password" name="pass" class="form-control" id="inputExperience" placeholder="Masukkan Password Anda" disabled></input>
                                             </div>
+                                            <?= form_error('password1', '<small class="text-danger">', '</small>') ?>
                                         </div>
                                         <div class="form-group row">
                                             <div class="offset-sm-2 col-sm-10">
-                                                <button type="submit" class="btn btn-danger">Submit</button>
+                                                <button type="submit" name="edit_profile" class="btn btn-danger">Submit</button>
                                             </div>
                                         </div>
                                     </form>

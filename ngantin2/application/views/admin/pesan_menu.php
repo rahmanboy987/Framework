@@ -10,38 +10,28 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">Pesanan All</h3>
-
-                            <div class="card-tools">
-                                <div class="input-group input-group-sm" style="width: 150px;">
-                                    <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
-
-                                    <div class="input-group-append">
-                                        <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
-                                    </div>
-                                </div>
-                            </div>
+                            <h3 class="card-title">Pesanan</h3>
                         </div>
                         <div class="card-body table-responsive p-0">
                             <table class="table table-hover text-nowrap">
                                 <thead>
                                     <tr>
                                         <th>ID</th>
-                                        <th>Pemilik</th>
-                                        <th>Menu</th>
-                                        <th>User</th>
+                                        <th>Id Pemilik</th>
+                                        <th>Nama</th>
+                                        <th>Harga</th>
                                         <th>Settings</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <?php
-                                    foreach ($all_pesanan as $row) { ?>
+                                    foreach ($all_menu_byid as $row) { ?>
                                         <tr>
                                             <td><?= $row->id ?></td>
                                             <td><?= $row->id_pemilik ?></td>
-                                            <td><?= $row->id_menu ?></td>
-                                            <td><?= $row->id_user ?></td>
-                                            <td><a href="<?= base_url() . 'admin/hapus_user/' . $row->id ?>" class="float-center btn btn-danger" onclick="return confirm('yakin?')">hapus</a></td>
+                                            <td><?= $row->nama ?></td>
+                                            <td><?= $row->harga ?></td>
+                                            <td><a href="<?= base_url() . 'admin/hapus_menu/' . $row->id ?>" class="float-center btn btn-danger" onclick="return confirm('yakin?')">hapus</a></td>
                                         </tr>
                                     <?php } ?>
                                 </tbody>
