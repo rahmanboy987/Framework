@@ -8,9 +8,9 @@
 
     <title><?= $title ?></title>
 
-    <link rel="stylesheet" href="<?= base_url() ?>plugins/fontawesome-free/css/all.min.css">
-    <link rel="stylesheet" href="<?= base_url() ?>plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
-    <link rel="stylesheet" href="<?= base_url() ?>dist/css/adminlte.min.css">
+    <script src="https://kit.fontawesome.com/659604d02a.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="<?= base_url() ?>css/OverlayScrollbars.min.css">
+    <link rel="stylesheet" href="<?= base_url() ?>css/adminlte.min.css">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
 

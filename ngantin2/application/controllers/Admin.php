@@ -80,18 +80,23 @@ class Admin extends CI_Controller
             $this->load->view('admin/_include/foot');
         }
     }
-    public function edit_profile()
+    public function profile($id = null)
     {
+        if ($id == null) {
+            $id = $this->data['user']['id'];
+        }
+
         if (($this->input->post('edit_profile')) !== null) {
             $this->Admin_model->update_profile_by_id($this->data['user']);
             redirect('admin/edit_profile');
         } else {
             $data['title'] = 'Admin - Dashboard_admin';
 
+            $data['member'] = $this->Admin_model->get_user($id);
             $this->load->view('admin/_include/head', $data);
             $this->load->view('admin/_include/nav');
             $this->load->view('admin/_include/side', $this->data);
-            $this->load->view('admin/edit_profile', $data);
+            $this->load->view('admin/profile', $data['member'], $this->data);
             $this->load->view('admin/_include/foot');
         }
     }

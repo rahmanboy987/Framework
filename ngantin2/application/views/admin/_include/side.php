@@ -8,7 +8,7 @@
                 <img src="<?= base_url() . 'img/profile/' . $user['image'] ?>" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
-                <a href="<?= base_url() ?>admin/edit_profile" class="d-block"><?= $user['nama'] ?></a>
+                <a href="<?= base_url() ?>admin/profile" class="d-block"><?= $user['nama'] ?></a>
             </div>
         </div>
         <nav class="mt-2">
@@ -102,9 +102,9 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a href="<?= base_url() ?>admin/edit_profile" class="nav-link">
+                    <a href="<?= base_url() ?>admin/profile" class="nav-link">
                         <i class="far fa-circle nav-icon"></i>
-                        <p>Edit Profile</p>
+                        <p>Profile</p>
                     </a>
                 </li>
                 <li class="nav-item">

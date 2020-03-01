@@ -7,6 +7,11 @@ class Admin_model extends CI_Model
         $query = $this->db->get_where('user', ['email' => $this->session->userdata('email')]);
         return $query->row_array();
     }
+    public function get_user($id)
+    {
+        $query = $this->db->get_where('user', ['id' => $id]);
+        return $query->row_array();
+    }
     public function get_all_user()
     {
         $query = $this->db->get('user');

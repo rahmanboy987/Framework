@@ -43,7 +43,10 @@
                                             <td><?= $row->email ?></td>
                                             <td><img style="width: 3em" src="<?= base_url() . 'img/profile/' . $row->image ?>" class=".img-thumbnail elevation-2" alt="User Image"></td>
                                             <td><?= $row->level ?></td>
-                                            <td><a href="<?= base_url() . 'admin/hapus_user/' . $row->id ?>" class="float-center btn btn-danger" onclick="return confirm('yakin?')">hapus</a></td>
+                                            <td>
+                                                <a href="<?= base_url() . 'admin/profile/' . $row->id ?>" class="float-center badge badge-primary">Go To profile</a>
+                                                <a href="<?= base_url() . 'admin/hapus_user/' . $row->id ?>" class="float-center badge badge-danger" onclick="return confirm('yakin?')">hapus</a>
+                                            </td>
                                         </tr>
                                     <?php } ?>
                                 </tbody>
