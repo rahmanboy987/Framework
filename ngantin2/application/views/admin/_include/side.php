@@ -1,7 +1,6 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
-    <a href="index3.html" class="brand-link">
-        <img src="<?= base_url() ?>dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-        <span class="brand-text font-weight-light"><b>NGANT</b>IN</span>
+    <a href="<?= base_url() ?>" class="brand-link">
+        <span class="brand-text font-weight-light pl-4"><i class="fas fa-utensils"></i> <b>NGANT</b>IN</span>
     </a>
     <div class="sidebar">
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
@@ -9,7 +8,7 @@
                 <img src="<?= base_url() . 'img/profile/' . $user['image'] ?>" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
-                <a href="#" class="d-block"><?= $user['nama'] ?></a>
+                <a href="<?= base_url() ?>admin/edit_profile" class="d-block"><?= $user['nama'] ?></a>
             </div>
         </div>
         <nav class="mt-2">
@@ -92,6 +91,12 @@
                             <a href="<?= base_url() ?>admin/pesanan_toko" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Lihat Pesanan</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?= base_url() ?>admin/lihat_menu" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Lihat Menu</p>
                             </a>
                         </li>
                     </ul>

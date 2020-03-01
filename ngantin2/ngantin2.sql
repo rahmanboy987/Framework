@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Feb 26, 2020 at 08:11 AM
+-- Generation Time: Feb 26, 2020 at 01:03 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.2
 
@@ -36,6 +36,13 @@ CREATE TABLE `menu` (
   `date_create` varchar(32) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `menu`
+--
+
+INSERT INTO `menu` (`id`, `id_pemilik`, `nama`, `harga`, `date_create`) VALUES
+(1, 8, 'ayam geprek', 12000, '');
+
 -- --------------------------------------------------------
 
 --
@@ -44,7 +51,6 @@ CREATE TABLE `menu` (
 
 CREATE TABLE `pesanan` (
   `id` int(11) NOT NULL,
-  `id_pemilik` int(11) NOT NULL,
   `id_menu` int(11) NOT NULL,
   `id_user` int(11) NOT NULL,
   `date_create` int(11) NOT NULL
@@ -73,11 +79,17 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `nama`, `email`, `image`, `password`, `level`, `verified`, `nama_toko`, `date_created`) VALUES
-(8, 'fathur rohman', 'rahmanboy987@gmail.com', 'default.jpeg', '$2y$10$5jD8NW8i3cr1oYLHMuMqq.8b9lrwDbrSEU5gcDzlF5JzCPFmdE.gK', 2, 1, 'ayam geprek pak fathur', 1582694453);
+(8, 'Moh. Fathur Rohman', 'rahmanboy987@gmail.com', 'default.jpeg', '$2y$10$5jD8NW8i3cr1oYLHMuMqq.8b9lrwDbrSEU5gcDzlF5JzCPFmdE.gK', 2, 1, 'Kantinnya Mas Fathur', 1582694453);
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `menu`
+--
+ALTER TABLE `menu`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `user`
@@ -90,10 +102,16 @@ ALTER TABLE `user`
 --
 
 --
+-- AUTO_INCREMENT for table `menu`
+--
+ALTER TABLE `menu`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -25,19 +25,21 @@
                                 <thead>
                                     <tr>
                                         <th>ID</th>
-                                        <th>Nama</th>
-                                        <th>Nama toko</th>
-                                        <th>Setting</th>
+                                        <th>Pemilik</th>
+                                        <th>Menu</th>
+                                        <th>User</th>
+                                        <th>Settings</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <?php
-                                    foreach ($pesanan_byid as $row) { ?>
+                                    foreach ($all_pesanan as $row) { ?>
                                         <tr>
                                             <td><?= $row->id ?></td>
-                                            <td><?= $row->nama ?></td>
-                                            <td><?= $row->nama_toko ?></td>
-                                            <td><a href="<?= base_url() . 'admin/lihat_menu/' . $row->id ?>" class="float-center btn btn-primary">Lihat Menu</a></td>
+                                            <td><?= $row->id_pemilik ?></td>
+                                            <td><?= $row->id_menu ?></td>
+                                            <td><?= $row->id_user ?></td>
+                                            <td><a href="<?= base_url() . 'admin/hapus_user/' . $row->id ?>" class="float-center btn btn-danger" onclick="return confirm('yakin?')">hapus</a></td>
                                         </tr>
                                     <?php } ?>
                                 </tbody>

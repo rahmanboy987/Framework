@@ -12,14 +12,19 @@ class Admin_model extends CI_Model
         $query = $this->db->get('user');
         return $query->result();
     }
-    public function get_all_toko()
+    public function get_all_menu()
     {
-        $query = $this->db->where('nama_toko !=', '')->get('user');
+        $query = $this->db->get('menu');
         return $query->result();
     }
     public function get_menu_by_id($id)
     {
         $query = $this->db->where('id', $id)->get('menu');
+        return $query->result();
+    }
+    public function get_all_toko()
+    {
+        $query = $this->db->where('nama_toko !=', '')->get('user');
         return $query->result();
     }
     public function get_all_pesanan()
@@ -72,5 +77,21 @@ class Admin_model extends CI_Model
     {
         $query = $this->db->delete('menu', array('id' => $id));
         return $query;
+    }
+    public function get_all_menu_pesan($id)
+    {
+        $query = $this->db->where('id_pemilik', $id)->get('menu');
+        return $query->result();
+    }
+    public function pesan_menu($user)
+    {
+        $data = array(
+            'id_pemilik' => $this->input->post('id_pemilik'),
+            'id_menu' => $this->input->post('id_menu'),
+            'id_user' => $user['id'],
+            'banyak' => $this->input->post('banyak'),
+            'date_create' => time()
+        );
+        $this->db->insert('pesanan', $data);
     }
 }

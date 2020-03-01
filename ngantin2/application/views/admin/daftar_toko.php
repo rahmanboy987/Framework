@@ -37,45 +37,7 @@
                                             <td><?= $row->id ?></td>
                                             <td><?= $row->nama ?></td>
                                             <td><?= $row->nama_toko ?></td>
-                                            <td>
-                                                <div class="card-tools">
-                                                    <div class="input-group input-group-sm" style="width: 150px;">
-                                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal<?= $row->id ?>">
-                                                            Lihat Menu
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                                <div class="modal fade" id="exampleModal<?= $row->id ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                    <div class="modal-dialog" role="document">
-                                                        <div class="modal-content">
-                                                            <div class="modal-header">
-                                                                <h5 class="modal-title" id="exampleModalLabel">Lihat Menu</h5>
-                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                                    <span aria-hidden="true">&times;</span>
-                                                                </button>
-                                                            </div>
-                                                            <form action="<?= base_url() ?>admin/daftar_menu" method="post">
-                                                                <div class="modal-body">
-                                                                    <?php foreach ($all_menu_byid('$row->id') as $row) {
-                                                                    } ?>
-                                                                    <div class="form-group">
-                                                                        <label for="nama">Nama</label>
-                                                                        <input type="text" class="form-control" id="nama" name="nama">
-                                                                    </div>
-                                                                    <div class="form-group">
-                                                                        <label for="npm">Harga</label>
-                                                                        <input type="number" class="form-control" id="harga" name="harga">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="modal-footer">
-                                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                                    <button type="submit" class="btn btn-primary" name="tambah_menu">Pesan</button>
-                                                                </div>
-                                                            </form>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </td>
+                                            <td><a href="<?= base_url() . 'admin/lihat_menu/' . $row->id ?>"><button class="btn btn-primary">Lihat Menu</button></a></td>
                                         </tr>
                                     <?php } ?>
                                 </tbody>

@@ -27,22 +27,38 @@
                                 <thead>
                                     <tr>
                                         <th>ID</th>
-                                        <th>User</th>
-                                        <th>Date</th>
-                                        <th>Status</th>
-                                        <th>Reason</th>
+                                        <th>id_pemilik</th>
+                                        <th>Nama Menu</th>
+                                        <th>Harga</th>
+                                        <th>jumlah</th>
+                                        <th>Pesan</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <!-- <?php foreach ($data as $user) { ?> -->
-                                    tr>
-                                    <td>219</td>
-                                    <td>Alexander Pierce</td>
-                                    <td>11-7-2014</td>
-                                    <td><span class="tag tag-warning">Pending</span></td>
-                                    <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                                    </tr>
-                                    <!-- <?php } ?> -->
+                                    <?php
+                                    foreach ($all_menu as $row) { ?>
+                                        <tr>
+                                            <form action="" method="post">
+                                                <td><?= $row->id ?></td>
+                                                <td><?= $row->id_pemilik ?></td>
+                                                <td><?= $row->nama ?></td>
+                                                <td><?= $row->harga ?></td>
+                                                <td>
+                                                    <div class="form-group">
+                                                        <input type="number" name="banyak" class="form-control" style="width: 100px;" min="1" required>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="form-group">
+                                                        <input type="hidden" name="id_pemilik" value="<?= $row->id_pemilik ?>">
+                                                        <input type="hidden" name="id_menu" value="<?= $row->id ?>">
+
+                                                        <button type="submit" name="pesan_menu" class="btn btn-primary">Pesan Menu</button>
+                                                    </div>
+                                                </td>
+                                            </form>
+                                        </tr>
+                                    <?php } ?>
                                 </tbody>
                             </table>
                         </div>
